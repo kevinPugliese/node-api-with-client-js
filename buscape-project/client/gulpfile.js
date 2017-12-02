@@ -14,6 +14,8 @@
 //
 // *************************************
 
+"use strict";
+
 var gulp        = require('gulp')
     ,imagemin   = require('gulp-imagemin')
     ,clean      = require('gulp-clean')

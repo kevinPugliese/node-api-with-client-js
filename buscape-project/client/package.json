@@ -5,7 +5,11 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "lite": "lite-server",
+    "tsc:w": "tsc -w",
+    "start": "npm run tsc:w",
+    "typings": "typings"
   },
   "author": "",
   "license": "ISC",

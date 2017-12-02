@@ -18,6 +18,9 @@ a{
     text-decoration: none;
     color: $body-link-font-color;
 }
+li {
+    list-style: none;
+}
 .padding-reset {
     padding-right: 0 !important;
 }

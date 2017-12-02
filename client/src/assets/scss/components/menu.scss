@@ -33,9 +33,11 @@
     right: 121px;
     top: 58px;
     width: 382px;
-    height: auto;
+    height: 0;
+    overflow: hidden;
     position: fixed;
     z-index: 999;
+    transition: all .5s;
     background-color: $menu-product-bg-color;
     -webkit-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
     -moz-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
@@ -82,7 +84,9 @@
         }
     }
 }
-
+.menu-open {
+    height: auto;
+}
 @media (max-width: 700px) {
     .menu-drop-down {
         width: 100%;

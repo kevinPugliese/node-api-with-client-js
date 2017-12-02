@@ -270,5 +270,13 @@
 
         </ul>
     </div>
+    <script>
+        var buttonMenu = document.querySelector('.nav');
+        var menuDropDown = document.querySelector('.menu-drop-down');
+        buttonMenu.onclick = function () {
+            menuDropDown.setAttribute('class', 'menu-drop-down menu-open');
+            console.log('button menu');
+        }
+    </script>
 </body>
 </html>

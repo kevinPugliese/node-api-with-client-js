@@ -39,7 +39,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('dist/assets/scss/'));
 });
 
-gulp.task('usemin', function() {
+gulp.task('usemin', ['sass'],function() {
     return gulp.src('dist/**/*.html')
         .pipe(usemin({
             js: [uglify],

@@ -1,6 +1,6 @@
 var db = require('../../config/database');
 
-var api = {}
+var api = {};
 
 api.register = function(req, res) {
     var product = req.body;

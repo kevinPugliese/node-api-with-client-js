@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f0f0f0;
+    background-color: $body-bg-color;
 }
 .padding-reset {
     padding-right: 0 !important;

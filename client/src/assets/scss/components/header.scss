@@ -1,0 +1,14 @@
+.header {
+    background-color: $header-bg-color;
+    height: 59px;
+    box-shadow: 1px 4px 8px -2px $header-shadow-color;
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .wrap-content {
+        padding-top: 10px;
+    }
+}

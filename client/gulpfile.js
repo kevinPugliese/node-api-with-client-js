@@ -36,7 +36,7 @@ gulp.task('build-img', function() {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('dist/assets/scss/**/*.scss')
+    return gulp.src('dist/assets/scss/bootstrap.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/assets/scss/'));
 });

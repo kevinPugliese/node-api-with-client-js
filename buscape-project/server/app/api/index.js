@@ -2,31 +2,21 @@ var db = require('../../config/database');
 
 var api = {}
 
+api.register = function(req, res) {
+    var product = req.body;
+    delete product._id;
+    db.insert(product, function(err, newDoc) {
+        if(err) return console.log(err);
+        console.log('Adicionado com sucesso: ' + newDoc._id);
+        res.json(newDoc._id);
+    });
+};
+
 api.search = function(req, res) {
-    db.find({}).sort({titulo: 1}).exec(function(err, doc) {
+    db.find({}).exec(function(err, doc) {
         if (err) return console.log(err);
         res.json(doc);
     });
 };
-
-api.searchItem = function(req, res) {
-
-    res.json([
-        {
-            _id: 1, 
-            nome: 'esporte'
-        }, 
-        { 
-            _id: 2, 
-            nome: 'lugares', 
-        }, 
-        { 
-            _id: 3, 
-            nome: 'animais'
-        }
-    ]);
-        
-};
-
 
 module.exports = api;

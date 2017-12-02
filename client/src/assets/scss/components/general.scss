@@ -14,6 +14,10 @@
 body {
     background-color: $body-bg-color;
 }
+a{
+    text-decoration: none;
+    color: $body-link-font-color;
+}
 .padding-reset {
     padding-right: 0 !important;
 }

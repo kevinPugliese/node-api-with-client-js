@@ -14,24 +14,24 @@
             background: $menu-border-icon-color;
             margin-top: 5px;
         }
-        .notification-quantity-products {
-            background: $menu-notification-bg-color;
-            color: $menu-notification-font-color;
-            width: 23px;
-            height: 23px;
-            display: block;
-            border-radius: 16px;
-            padding: 4px 8px;
-            position: absolute;
-            z-index: 999;
-            top: 16px;
-            left: 85px;
-        }
+    }
+    .notification-quantity-products {
+        background: $menu-notification-bg-color;
+        color: $menu-notification-font-color;
+        width: 23px;
+        height: 23px;
+        display: block;
+        border-radius: 16px;
+        padding: 4px 8px;
+        position: absolute;
+        z-index: 999;
+        top: 16px;
+        left: 85px;
     }
     .menu-drop-down {
         left: -349px;
         width: 382px;
-        top: 2px;
+        top: 19px;
         height: auto;
         background-color: $menu-product-bg-color;
         z-index: 999;
@@ -44,6 +44,25 @@
             height: 90px;
             width: 100%;
             background-color: $menu-product-bg-color;
+            padding: 10px;
+            font-size: 14px;
+            border-bottom: 1px solid $menu-drop-down-border-color;
+
+            .img-cart-product {
+                margin-left: 2px;
+                margin-top: 5px;
+                width: 57px;
+            }
+
+            .description {
+                width: 100%;
+                color: $menu-drop-down-description-font-color;
+                margin-bottom: 10px;
+            }
+
+            a {
+                text-align: center;
+            }
         }
 
         .payment-summary {

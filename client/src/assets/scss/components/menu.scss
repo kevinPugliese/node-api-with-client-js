@@ -23,67 +23,74 @@
         display: block;
         border-radius: 16px;
         padding: 4px 8px;
-        position: absolute;
-        z-index: 999;
-        top: 16px;
-        left: 85px;
-    }
-    .menu-drop-down {
-        left: -349px;
-        width: 382px;
-        top: 19px;
-        height: auto;
-        background-color: $menu-product-bg-color;
-        z-index: 999;
         position: relative;
-        -webkit-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
-        -moz-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
-        box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
+        z-index: 999;
+        top: -10px;
+        left: -13px;
+    }
+}
+.menu-drop-down {
+    right: 121px;
+    top: 58px;
+    width: 382px;
+    height: auto;
+    position: fixed;
+    z-index: 999;
+    background-color: $menu-product-bg-color;
+    -webkit-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
+    -moz-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
+    box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
 
-        .product {
-            height: 90px;
+    .product {
+        height: 90px;
+        width: 100%;
+        background-color: $menu-product-bg-color;
+        padding: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid $menu-drop-down-border-color;
+
+        .img-cart-product {
+            margin-left: 2px;
+            margin-top: 5px;
+            width: 57px;
+        }
+
+        .description {
             width: 100%;
-            background-color: $menu-product-bg-color;
-            padding: 10px;
+            color: $menu-drop-down-description-font-color;
+            margin-bottom: 10px;
+        }
+
+        .wrap-close {
+            text-align: center;
+        }
+    }
+
+    .payment-summary {
+        bottom: 0;
+        width: 100%;
+        height: 90px;
+        background-color: $menu-drop-down-payment-summary;
+        position: absolute;
+        padding: 14px;
+
+        div:first-child {
+            border-bottom: 1px solid #927500;
+            margin-bottom: 5px;
+        }
+
+        div {
+            padding-bottom: 5px;
+            width: 100%;
+            text-align: right;
             font-size: 14px;
-            border-bottom: 1px solid $menu-drop-down-border-color;
-
-            .img-cart-product {
-                margin-left: 2px;
-                margin-top: 5px;
-                width: 57px;
-            }
-
-            .description {
-                width: 100%;
-                color: $menu-drop-down-description-font-color;
-                margin-bottom: 10px;
-            }
-
-            a {
-                text-align: center;
-            }
         }
+    }
+}
 
-        .payment-summary {
-            bottom: 0;
-            width: 100%;
-            height: 90px;
-            background-color: $menu-drop-down-payment-summary;
-            position: absolute;
-            padding: 14px;
-
-            div:first-child {
-                border-bottom: 1px solid #927500;
-                margin-bottom: 5px;
-            }
-
-            div {
-                padding-bottom: 5px;
-                width: 100%;
-                text-align: right;
-                font-size: 14px;
-            }
-        }
+@media (max-width: 700px) {
+    .menu-drop-down {
+        width: 100%;
+        right: 0;
     }
 }

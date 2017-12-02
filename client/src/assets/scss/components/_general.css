@@ -1,0 +1,28 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f0f0f0;
+}
+.padding-reset {
+    padding-right: 0 !important;
+}
+.padding-left-reset {
+    padding-left: 0 !important;
+}
+.padding-right-reset {
+    padding-right: 0 !important;
+}
+.img-product {
+    width: 81%;
+}

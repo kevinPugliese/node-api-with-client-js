@@ -1,0 +1,64 @@
+.nav {
+    padding-top: 5px;
+}
+.menu {
+    position: relative;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;
+    width: 30px;
+    height: 25px;
+}
+.line {
+    width: 30px;
+    height: 5px;
+    background: #000;
+    margin-top: 5px;
+}
+.notification-quantity-products {
+    background: red;
+    color: white;
+    width: 23px;
+    height: 23px;
+    display: block;
+    border-radius: 16px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 999;
+    top: 16px;
+    left: 85px;
+}
+.menu-drop-down {
+    left: -349px;
+    width: 382px;
+    top: 20px;
+    height: auto;
+    background-color: #c49d00;
+    z-index: 999;
+    position: relative;
+    -webkit-box-shadow: 2px 3px 18px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 18px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 18px 0px rgba(0,0,0,0.75);
+}
+.payment-summary {
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #daaf00;
+    position: absolute;
+    padding: 14px;
+}
+.payment-summary div:first-child {
+    border-bottom: 1px solid #927500;
+    margin-bottom: 5px;
+}
+.payment-summary div {
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+}
+.menu-drop-down .product {
+    height: 90px;
+    width: 100%;
+    background-color: #14a93e;
+}

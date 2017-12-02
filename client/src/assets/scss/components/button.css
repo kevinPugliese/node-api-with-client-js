@@ -1,0 +1,14 @@
+.wrap-button {
+    padding: 0 !important;
+    margin-top: 10px
+}
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 2px;
+    font-size: 11px;
+}
+.btn-primary {
+    background-color: #14a93e;
+    color: #d5eedb;
+}

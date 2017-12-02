@@ -1,0 +1,10 @@
+.slide {
+    width: 18%;
+    float: left;
+}
+.slide img {
+    width: 30px !important;
+}
+li {
+    list-style: none;
+}

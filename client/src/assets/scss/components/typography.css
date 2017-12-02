@@ -1,0 +1,12 @@
+.wrap-installment {
+    color: #22b14c;
+}
+.wrap-installment span {
+    font-weight: bold;
+}
+.wrap-cash-payment {
+    font-size: 12px;
+}
+.wrap-cash-payment span {
+    color: #22b14c;
+}

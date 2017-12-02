@@ -1,0 +1,23 @@
+.tag {
+    background-color: #0083de;
+    color: #cbe5f9;
+    padding: 6px;
+    font-size: 8px;
+    font-family: Arial;
+    width: 77px;
+    position: relative;
+    margin: 10px 0 8px 0;
+}
+.tag:before {
+    content: '';
+    height: 0;
+    right: -21px;
+    position: absolute;
+    top: 0;
+    width: 0;
+    border-color: transparent transparent transparent #0083de;
+    border-width: 10px;
+    border-left-width: 11px;
+    border-style: solid;
+    z-index: 2;
+}

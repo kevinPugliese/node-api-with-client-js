@@ -22,34 +22,27 @@ var gulp        = require('gulp')
     ,uglify     = require('gulp-uglify')
     ,usemin     = require('gulp-usemin')
     ,cssmin     = require('gulp-cssmin')
-    ,sass       = require('gulp-sass');
+    ,sass       = require('gulp-sass')
+    ,rename     = require('gulp-rename');
 
 
 var options     = {
 
-    dist        : 'dist',
-    imgs        : 'dist/assets/img/**/*',
-    imgsDist    : 'dist/assets/img',
-    src         : 'src/**/*',
-    bootstrap   : 'dist/assets/scss/bootstrap.scss',
-    scss        : 'dist/assets/scss/',
-    html        : 'dist/**/*.html'
+    dist        : 'assets/css',
+    imgs        : 'assets/img/**/*',
+    imgsDist    : 'assets/img',
+    css         : 'assets/css/*.css',
+    bootstrap   : 'assets/scss/bootstrap.scss',
+    nameCSS     : 'index.min.css'
 };
 
-console.log(options.imgs);
-
-gulp.task('default', ['copy'], function() {
-    gulp.start('build-img', 'usemin');
+gulp.task('default', ['clean'], function() {
+    gulp.start('build-img', 'cssmin');
 });
 
 gulp.task('clean', function() {
     return gulp.src(options.dist)
         .pipe(clean());
-});
-
-gulp.task('copy', ['clean'], function() {
-    return gulp.src(options.src)
-        .pipe(gulp.dest(options.dist));
 });
 
 gulp.task('build-img', function() {
@@ -62,14 +55,12 @@ gulp.task('build-img', function() {
 gulp.task('sass', function () {
     return gulp.src(options.bootstrap)
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(options.scss));
+        .pipe(gulp.dest(options.dist));
 });
 
-gulp.task('usemin', ['sass'],function() {
-    return gulp.src(options.html)
-        .pipe(usemin({
-            js: [uglify],
-            css: [cssmin]
-        }))
+gulp.task('cssmin', ['sass'],function() {
+    gulp.src(options.css)
+        .pipe(cssmin())
+        .pipe(rename(options.nameCSS))
         .pipe(gulp.dest(options.dist));
 });

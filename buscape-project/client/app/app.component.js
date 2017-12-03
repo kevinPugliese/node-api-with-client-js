@@ -14,6 +14,7 @@ var AppComponent = (function () {
     function AppComponent(http) {
         var _this = this;
         this.cards = [];
+        this.products = ['ola', 'teste'];
         http.get('v1/product')
             .map(function (res) { return res.json(); })
             .subscribe(function (card) { return _this.cards = card[0].items; }, function (erro) { return console.log(erro); });

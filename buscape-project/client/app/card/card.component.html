@@ -4,16 +4,16 @@
             <div class="col-xs-6">
                 <ul class="slide">
                     <li>
-                        <img class="" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="">
+                        <img class="" src="{{imgSrc}}" alt="">
                     </li>
                     <li>
-                        <img class="" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_2_c.jpg?v=2347575274" alt="">
+                        <img class="" src="{{images1}}" alt="">
                     </li>
                     <li>
-                        <img class="" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_3_c.jpg?v=318433138" alt="">
+                        <img class="" src="{{images2}}" alt="">
                     </li>
                     <li>
-                        <img class="" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb/__200x400-PU98460_4_c.jpg?v=33273730" alt="">
+                        <img class="" src="{{images3}}" alt="">
                     </li>
                 </ul>
                 <img class="img-product" src="{{imgSrc}}" alt="">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 wrap-button">
-                    <button class="btn btn-primary">Adicionar ao carrinho <i class="right"></i></button>
+                    <button class="btn btn-primary" (click)="addCart(this)" data-id="{{id}}">Adicionar ao carrinho <i class="right"></i></button>
                 </div>
             </div>
         </div>

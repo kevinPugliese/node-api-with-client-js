@@ -9,60 +9,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CardComponent = (function () {
-    function CardComponent() {
-        this.items = [];
+var CartComponent = (function () {
+    function CartComponent() {
     }
-    CardComponent.prototype.addCart = function (product) {
-        console.log(this.items);
-        this.items.push(product);
-        console.log(this.items);
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "id", void 0);
+    ], CartComponent.prototype, "id", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "name", void 0);
+    ], CartComponent.prototype, "name", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "value", void 0);
+    ], CartComponent.prototype, "value", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "installmentes", void 0);
+    ], CartComponent.prototype, "installmentes", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "installmentValue", void 0);
+    ], CartComponent.prototype, "installmentValue", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "imgSrc", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], CardComponent.prototype, "images1", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], CardComponent.prototype, "images2", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], CardComponent.prototype, "images3", void 0);
-    CardComponent = __decorate([
+    ], CartComponent.prototype, "imgSrc", void 0);
+    CartComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'card',
-            templateUrl: './card.component.html'
+            selector: 'cart',
+            templateUrl: './cart.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], CardComponent);
-    return CardComponent;
+    ], CartComponent);
+    return CartComponent;
 }());
-exports.CardComponent = CardComponent;
-//# sourceMappingURL=card.component.js.map
+exports.CartComponent = CartComponent;
+//# sourceMappingURL=cart.component.js.map

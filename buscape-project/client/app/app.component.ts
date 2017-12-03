@@ -9,6 +9,7 @@ import { Http } from '@angular/http';
 export class AppComponent {
 
     cards: Object[] = [];
+    products = ['ola', 'teste'];
 
     constructor(http: Http) {
 

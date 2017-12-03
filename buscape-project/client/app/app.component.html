@@ -1,7 +1,12 @@
 <section class="section-content">
     <div class="container">
         <div class="row">
-            <card *ngFor="let c of cards" name="{{c.product.name}}" price="{{c.product.price}}"></card>
+            <card *ngFor="let c of cards"
+                  name="{{c.product.name}}"
+                  value="{{c.product.price.value}}"
+                  installmentValue="{{c.product.price.installmentValue}}"
+                  imgSrc="{{c.product.images[0]}}"
+            ></card>
         </div>
     </div>
 </section>

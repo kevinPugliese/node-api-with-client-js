@@ -8,6 +8,9 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
 
     @Input() name;
-    @Input() price;
+    @Input() value;
+    @Input() installmentes;
+    @Input() installmentValue;
+    @Input() imgSrc;
 
 }

@@ -19,7 +19,19 @@ var CardComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], CardComponent.prototype, "price", void 0);
+    ], CardComponent.prototype, "value", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], CardComponent.prototype, "installmentes", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], CardComponent.prototype, "installmentValue", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], CardComponent.prototype, "imgSrc", void 0);
     CardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

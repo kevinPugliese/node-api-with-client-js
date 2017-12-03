@@ -8,24 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-require('rxjs/add/operator/map');
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var card_module_1 = require('./card/card.module');
-var http_1 = require('@angular/http');
-var AppModule = (function () {
-    function AppModule() {
+var card_component_1 = require('./card.component');
+var CardModule = (function () {
+    function CardModule() {
     }
-    AppModule = __decorate([
+    CardModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, card_module_1.CardModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            declarations: [card_component_1.CardComponent],
+            exports: [card_component_1.CardComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], CardModule);
+    return CardModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.CardModule = CardModule;
+//# sourceMappingURL=card.module.js.map

@@ -9,8 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(http) {
+        var _this = this;
+        this.cards = [];
+        http.get('v1/product')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (card) { return _this.cards = card[0].items; }, function (erro) { return console.log(erro); });
     }
     AppComponent = __decorate([
         core_1.Component({
@@ -18,7 +24,7 @@ var AppComponent = (function () {
             selector: 'app',
             templateUrl: './app.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], AppComponent);
     return AppComponent;
 }());

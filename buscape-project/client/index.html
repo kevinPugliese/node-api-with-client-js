@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"/>
     <title>Buscapé - Compare Preços</title>
     <link rel="stylesheet" href="assets/css/index.min.css">
-
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-
-    <script src="systemjs.config.js"></script>
-    <script>
-        System.import('app').catch(function(err){ console.error(err); });
-    </script>
 </head>
 <body>
     <header class="header">
@@ -37,6 +26,76 @@
             </div>
         </div>
     </header>
-    <app>Carregando</app>
+    <section class="section-content container">
+        <div class="col-xs-12 col-md-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <ul class="slide">
+                            <li>
+                                <img class="" src="{{imgSrc}}" alt="">
+                            </li>
+                            <li>
+                                <img class="" src="{{images1}}" alt="">
+                            </li>
+                            <li>
+                                <img class="" src="{{images2}}" alt="">
+                            </li>
+                            <li>
+                                <img class="" src="{{images3}}" alt="">
+                            </li>
+                        </ul>
+                        <img class="img-product" src="{{imgSrc}}" alt="">
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="text-description">
+                            <p>{{name}}</p>
+                        </div>
+                        <div class="col-md-s12">
+                            <div class="wrap-tag">
+                                <div class="tag">MELHOR PREÇO</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 padding-left-reset">
+                            <div class="wrap-price">
+                                <div class="wrap-installment">
+                                    10x R$
+                                    <span>130</span>
+                                </div>
+                                <div class="wrap-cash-payment">
+                                    ou <span>R$ 1300,00</span>  á vista
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 wrap-button">
+                            <button class="btn btn-primary">Adicionar ao carrinho <i class="right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <link rel="stylesheet" href="node_modules/jquery/dist/jquery.min.js">
+    <!--<ul>-->
+        <!--<li class="lit-item">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-2">-->
+                    <!--<img class="img-cart-product" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-xs-8">-->
+                    <!--<div class="description">-->
+                        <!--Bla-->
+                    <!--</div>-->
+                    <!--<div class="price">-->
+                        <!--<div>10x R$ 366,56</div>-->
+                        <!--<div>ou R$ 3.199,00 á vista</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<a href="#" class="col-xs-2 wrap-close">-->
+                    <!--<span>X</span>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</li>-->
+    <!--</ul>-->
 </body>
 </html>

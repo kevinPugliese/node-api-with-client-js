@@ -18,11 +18,11 @@
     .notification-quantity-products {
         background: $menu-notification-bg-color;
         color: $menu-notification-font-color;
-        width: 23px;
-        height: 23px;
+        width: 30px;
+        height: 30px;
         display: block;
         border-radius: 16px;
-        padding: 4px 8px;
+        padding: 6px 10px;
         position: relative;
         z-index: 999;
         top: -10px;
@@ -34,10 +34,11 @@
     top: 58px;
     width: 382px;
     height: auto;
-    overflow: hidden;
+    max-height: 500px;
+    overflow: scroll;
     position: fixed;
     z-index: 999;
-    transition: all .5s;
+    display: none;
     background-color: $menu-product-bg-color;
     -webkit-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
     -moz-box-shadow: 2px 3px 18px 0px $menu-drop-down-shadow-color;
@@ -84,8 +85,8 @@
         }
     }
 }
-.menu-open {
-    height: auto;
+.open-menu{
+    display: block;
 }
 @media (max-width: 700px) {
     .menu-drop-down {

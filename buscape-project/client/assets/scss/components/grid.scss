@@ -14,10 +14,18 @@
     padding-left: 96px !important;
   }
 }
-@media (max-width: 1000px) {
+@mmedia (max-width: 580px) {
+  .img-product {
+      width: 82%!important;
+  }
+}
+@media (min-width: 581px) {
   .wrap-button {
     padding-left: 0 !important;
     margin-top: 10px !important;
+  }
+  .img-product {
+    width: 67%;
   }
 }
 @media (max-width: 750px) {

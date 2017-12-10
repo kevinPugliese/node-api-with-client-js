@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"/>
     <title>Buscapé - Compare Preços</title>
-    <link rel="stylesheet" href="assets/css/index.min.css">
+    <link rel="stylesheet" href="assets/dist/css/index.min.css">
 </head>
 <body>
     <header class="header">
@@ -16,10 +16,10 @@
                     </div>
                     <div class="col-xs-2 nav">
                         <a href="#">
-                            <div class="menu">
+                            <div class="menu menu-drop">
                                 <div class="line"></div>
                             </div>
-                            <span class="notification-quantity-products">2</span>
+                            <span class="notification-quantity-products menu-drop">0</span>
                         </a>
                     </div>
                 </div>
@@ -27,29 +27,30 @@
         </div>
     </header>
     <section class="section-content container">
+        <div id="target"></div>
+    </section>
+
+    <ul class="menu-drop-down">
+    </ul>
+
+    <script type="text/template" id="template-card-product">
+        {{# items }}
         <div class="col-xs-12 col-md-6">
             <div class="card">
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-md-6">
                         <ul class="slide">
+                            {{# product.images }}
                             <li>
-                                <img class="" src="{{imgSrc}}" alt="">
+                                <img class="slide-img" src="{{.}}" alt="">
                             </li>
-                            <li>
-                                <img class="" src="{{images1}}" alt="">
-                            </li>
-                            <li>
-                                <img class="" src="{{images2}}" alt="">
-                            </li>
-                            <li>
-                                <img class="" src="{{images3}}" alt="">
-                            </li>
+                            {{/ product.images }}
                         </ul>
-                        <img class="img-product" src="{{imgSrc}}" alt="">
+                        <img class="img-product" src="{{ product.images }}" alt="">
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-md-6">
                         <div class="text-description">
-                            <p>{{name}}</p>
+                            <p>{{product.name}}</p>
                         </div>
                         <div class="col-md-s12">
                             <div class="wrap-tag">
@@ -59,43 +60,73 @@
                         <div class="col-md-12 padding-left-reset">
                             <div class="wrap-price">
                                 <div class="wrap-installment">
-                                    10x R$
-                                    <span>130</span>
+                                    {{ product.price.installments }} x R$
+                                    <span>{{ product.price.installmentValue }}</span>
                                 </div>
                                 <div class="wrap-cash-payment">
-                                    ou <span>R$ 1300,00</span>  á vista
+                                    ou <span>R$ {{ product.price.value }}</span>  á vista
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12 wrap-button">
-                            <button class="btn btn-primary">Adicionar ao carrinho <i class="right"></i></button>
+                            <button class="btn btn-primary addCart"
+                                    data-name="{{ product.name }}"
+                                    data-installments="{{ product.price.installments }}"
+                                    data-installment-value="{{ product.price.installmentValue }}"
+                                    data-value="{{ product.price.value }}"
+                                    data-img="{{ product.images }}"
+                            >Adicionar ao carrinho <i class="right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <link rel="stylesheet" href="node_modules/jquery/dist/jquery.min.js">
-    <!--<ul>-->
-        <!--<li class="lit-item">-->
-            <!--<div class="row">-->
-                <!--<div class="col-xs-2">-->
-                    <!--<img class="img-cart-product" src="http://thumbs.buscape.com.br/celular-e-smartphone/smartphone-apple-iphone-7-128gb_600x600-PU98460_1.jpg" alt="">-->
-                <!--</div>-->
-                <!--<div class="col-xs-8">-->
-                    <!--<div class="description">-->
-                        <!--Bla-->
-                    <!--</div>-->
-                    <!--<div class="price">-->
-                        <!--<div>10x R$ 366,56</div>-->
-                        <!--<div>ou R$ 3.199,00 á vista</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<a href="#" class="col-xs-2 wrap-close">-->
-                    <!--<span>X</span>-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</li>-->
-    <!--</ul>-->
+        {{/ items }}
+    </script>
+
+    <script type="text/template" id="template-items-cart">
+        <li class="lit-item">
+            <div class="row">
+                <div class="col-xs-2">
+                    <img class="img-cart-product" src="{{ img }}" alt="">
+                </div>
+                <div class="col-xs-8">
+                    <div class="description">
+                        {{ name }}
+                    </div>
+                    <div class="price">
+                        <div>{{installments}}x R$ {{installmentValue}}</div>
+                        <div>ou R$ {{value}} á vista</div>
+                    </div>
+                </div>
+                <a href="#"
+                   class="col-xs-2 wrap-close"
+                   data-installment-value="{{ installmentValue }}"
+                   data-value="{{ value }}"
+                >
+                    <span>X</span>
+                </a>
+            </div>
+        </li>
+    </script>
+
+    <script type="text/template" id="template-payment-summary">
+        <li class="lit-item payment-summary">
+            <div class="">subtotal</div>
+            <div class="">{{installments}}x R$ {{installmentValue}}</div>
+            <div class="">ou R$ {{value}} á vista</div>
+        </li>
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/mustache/mustache.min.js"></script>
+    <script type="text/javascript" src="assets/dist/js/index.min.js"></script>
+    <script type="text/javascript">
+        Buscape.Card().init();
+        Buscape.Cart().init();
+        Buscape.Menu().init();
+        Buscape.Slide().init();
+    </script>
 </body>
 </html>

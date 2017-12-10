@@ -23,21 +23,25 @@ var gulp        = require('gulp')
     ,usemin     = require('gulp-usemin')
     ,cssmin     = require('gulp-cssmin')
     ,sass       = require('gulp-sass')
-    ,rename     = require('gulp-rename');
-
+    ,rename     = require('gulp-rename')
+    ,concat     = require('gulp-concat');
 
 var options     = {
 
-    dist        : 'assets/css',
+    distCSS     : 'assets/dist/css',
     imgs        : 'assets/img/**/*',
     imgsDist    : 'assets/img',
-    css         : 'assets/css/*.css',
+    css         : 'assets/dist/css/*.css',
     bootstrap   : 'assets/scss/bootstrap.scss',
-    nameCSS     : 'index.min.css'
+    nameCSS     : 'index.min.css',
+    js          : 'assets/js/*.js',
+    nameJs      : 'index.min.js',
+    distJs      : 'assets/dist/js',
+    dist        : 'assets/dist/'
 };
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('build-img', 'cssmin');
+    gulp.start('build-img', 'cssmin', 'scripts');
 });
 
 gulp.task('clean', function() {
@@ -55,12 +59,19 @@ gulp.task('build-img', function() {
 gulp.task('sass', function () {
     return gulp.src(options.bootstrap)
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(options.dist));
+        .pipe(gulp.dest(options.distCSS));
 });
 
 gulp.task('cssmin', ['sass'],function() {
     gulp.src(options.css)
         .pipe(cssmin())
         .pipe(rename(options.nameCSS))
-        .pipe(gulp.dest(options.dist));
+        .pipe(gulp.dest(options.distCSS));
+});
+
+gulp.task('scripts', function() {
+    return gulp.src(options.js)
+        .pipe(concat(options.nameJs))
+        .pipe(uglify())
+        .pipe(gulp.dest(options.distJs));
 });
